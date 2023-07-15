@@ -47,7 +47,7 @@ const Map: React.FC<MapProps> = ({ center = [51.5074, -0.1278] }) => {
       center={(center as L.LatLngExpression) || [51, -0.09]}
       zoom={center ? 8 : 4}
       scrollWheelZoom={false}
-      className='h-[35vh] rounded-lg'
+      className='h-[35vh] rounded-lg shadow-lg'
       // @ts-ignore
       whenCreated={(map) => {
         mapRef.current = map;

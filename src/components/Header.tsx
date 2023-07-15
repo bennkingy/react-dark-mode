@@ -29,12 +29,12 @@ const Header = ({ children }: any) => {
           bg-neutral-800/70
         '
       >
-        <div className='h-full w-[calc(100vw-100px)] z-50 absolute dark:bg-gray-700 md:hidden'>
+        <div className='h-full w-[calc(100vw-100px)] z-50 absolute bg-white dark:bg-gray-700 md:hidden'>
           <ul className='flex flex-col mt-20 font-medium'>
             <li>
               <a
                 href='/'
-                className='block py-2 pl-3 pr-4 font-semibold	border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700'
+                className='block py-2 pl-3 pr-4 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-blue-500 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700  font-bold'
                 aria-current='page'
               >
                 Home
@@ -46,7 +46,7 @@ const Header = ({ children }: any) => {
                 onClick={() => {
                   toggleMenu();
                 }}
-                className='flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-white border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700'
+                className='flex text-black items-center justify-between w-full py-2 pl-3 pr-4 font-medium border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700'
               >
                 Services{' '}
                 <svg
@@ -70,7 +70,7 @@ const Header = ({ children }: any) => {
                   id='mega-menu-dropdown'
                   className='z-10 grid w-auto grid-cols-2 text-sm  dark:border-gray-700 md:grid-cols-3 dark:bg-gray-700'
                 >
-                  <div className='p-4 pb-0 text-white md:pb-4 dark:text-white'>
+                  <div className='p-4 pb- md:pb-4 dark:text-white'>
                     <ul
                       className='space-y-4'
                       aria-labelledby='mega-menu-dropdown-button'
@@ -156,7 +156,7 @@ const Header = ({ children }: any) => {
               <a
                 href='/'
                 className={`block py-2 pl-3 pr-4 ${
-                  !isFixed ? 'text-white' : 'text-black'
+                  !isFixed ? 'text-black' : 'text-black'
                 } border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0  md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700`}
               >
                 Team
@@ -166,7 +166,7 @@ const Header = ({ children }: any) => {
               <a
                 href='/contact'
                 className={`block py-2 pl-3 pr-4 ${
-                  !isFixed ? 'text-white' : 'text-black'
+                  !isFixed ? 'text-black' : 'text-black'
                 } border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700`}
               >
                 Contact
@@ -206,14 +206,18 @@ const Header = ({ children }: any) => {
       >
         <nav
           className={`h-[70px] border-gray-200 transition-colors ${
-            !isFixed ? 'bg-transparent text-white' : 'bg-white'
+            !isFixed ? 'bg-transparent text-white' : 'bg-white shadow-sm'
           }`}
         >
           <div className='flex h-full flex-wrap items-center justify-between max-w-screen-xl mx-auto px-4'>
             <a href='/' className='flex items-center'>
               <span
                 className={`self-center text-2xl font-semibold whitespace-nowrap ${
-                  !isFixed ? 'text-white' : 'text-black'
+                  isMenuMobileOpen
+                    ? 'text-black'
+                    : !isFixed
+                    ? 'text-white'
+                    : 'text-black'
                 }`}
               >
                 Plumbers
@@ -236,7 +240,11 @@ const Header = ({ children }: any) => {
                     d='M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z'
                     clipRule='evenodd'
                   />
-                  <path d='M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z' />
+                  <path
+                    fillRule='evenodd'
+                    d='M14.586 2H5.414A1.414 1.414 0 004 3.414V16.586a1.414 1.414 0 001.414 1.414h9.172A1.414 1.414 0 0016 16.586V3.414A1.414 1.414 0 0014.586 2zM5 4h10v12H5V4z'
+                    clipRule='evenodd'
+                  />
                 </svg>
                 <div className='flex flex-col ml-2'>
                   <div className='mb-0 pb-0 font-semibold'>07497-497-583</div>

@@ -18,6 +18,7 @@ const ToggleTheme = () => {
     <Button
       onClick={toggleTheme}
       type="outline"
+      className="bg-white"
       label={'Toggle Theme'}
     />
   )

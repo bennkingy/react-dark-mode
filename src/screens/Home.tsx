@@ -1,3 +1,4 @@
+import Carousel from '../components/Carousel';
 import Hero from '../components/Hero';
 import Intro from '../components/Intro';
 import Services from '../components/Services';
@@ -11,8 +12,8 @@ const Home: React.FC = () => {
     <div className=''>
       <Hero
         height='h-[70vh]'
-        title='Mallard Plumbing and Heating'
-        subtitle='From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.'
+        title='Welcome to Mallard Plumbing and Heating'
+        subtitle='With over 10 years industry experience, we pride ourselves on providing an efficient, transparent, and reliable service. With customer satisfaction at the forefront of what we do, we strive to provide the highest quality workmanship and convenient solutions to our valued customer base.'
         cta={{
           label: 'Get a quote',
           onClick: () => {
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
           },
         }}
       />
+      <Carousel />
       <Intro />
       <Services />
     </div>

@@ -1,5 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import Button from './Button';
+import Input from './Input';
 
 const SMSForm = () => {
   const [message, setMessage] = useState({
@@ -22,17 +24,19 @@ const SMSForm = () => {
       body: JSON.stringify(message),
     })
       .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
+      .then((res) => {
+        if (res === 'SMS sent successfully') {
           setError(false);
           setSubmitting(false);
           setMessage({
             to: '',
             body: '',
           });
+          toast.success('Excellent! We will be in touch shortly.');
         } else {
           setError(true);
           setSubmitting(false);
+          toast.success('Sorry! There has been an error.');
         }
       });
   };
@@ -59,16 +63,28 @@ const SMSForm = () => {
           onChange={onHandleChange}
         />
       </div> */}
-      <div>
-        <textarea
+      <p className='text-sm text-gray-500 dark:text-gray-400 font-medium'>
+        Send our engineers a text to call back directly below. We aim to call
+        you back within 24 hours.
+      </p>
+      <div className='flex mt-4'>
+        <Input
+          label='Enter your number'
           placeholder='Enter your number'
           name='body'
           id='body'
+          type='number'
           value={message.body}
           onChange={onHandleChange}
         />
+        <Button
+          type='submit'
+          small
+          label='Submit'
+          outline
+          disabled={submitting}
+        />
       </div>
-      <Button type='submit' label='Submit' disabled={submitting} />
     </form>
   );
 };
