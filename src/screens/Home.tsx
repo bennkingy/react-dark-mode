@@ -1,12 +1,11 @@
-import Carousel from '../components/Carousel';
 import Hero from '../components/Hero';
-import Intro from '../components/Intro';
 import Services from '../components/Services';
+import Waves from '../components/Waves';
 import { removeBodyScrollingWhenModalOpen } from '../helpers/extensions';
-import useRegisterModal from '../hooks/useRegisterModal';
+import useRentModal from '../hooks/useRentModal';
 
 const Home: React.FC = () => {
-  const registerModal = useRegisterModal();
+  const rentModal = useRentModal();
 
   return (
     <div className=''>
@@ -18,12 +17,11 @@ const Home: React.FC = () => {
           label: 'Get a quote',
           onClick: () => {
             removeBodyScrollingWhenModalOpen(true);
-            registerModal.onOpen();
+            rentModal.onOpen();
           },
         }}
       />
-      <Carousel />
-      <Intro />
+      <Waves />
       <Services />
     </div>
   );

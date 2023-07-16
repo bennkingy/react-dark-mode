@@ -1,6 +1,10 @@
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Turn as Hamburger } from 'hamburger-react';
 import { useEffect, useState } from 'react';
 import Headroom from 'react-headroom';
+import { removeBodyScrollingWhenModalOpen } from '../helpers/extensions';
+import { categories } from './Services';
 
 const Header = ({ children }: any) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -13,6 +17,7 @@ const Header = ({ children }: any) => {
 
   const toggleMenuMobile = () => {
     setIsMenuMobileOpen(!isMenuMobileOpen);
+    removeBodyScrollingWhenModalOpen(!isMenuMobileOpen);
   };
 
   const MobileMenu = () => {
@@ -217,7 +222,7 @@ const Header = ({ children }: any) => {
                     ? 'text-black'
                     : !isFixed
                     ? 'text-white'
-                    : 'text-black'
+                    : 'text-b lack'
                 }`}
               >
                 Plumbers
@@ -229,23 +234,7 @@ const Header = ({ children }: any) => {
                   !isFixed ? 'text-white' : 'text-black'
                 }`}
               >
-                <svg
-                  className='w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300 dark:fill-white'
-                  fill='currentColor'
-                  viewBox='0 0 20 20'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    fillRule='evenodd'
-                    d='M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z'
-                    clipRule='evenodd'
-                  />
-                  <path
-                    fillRule='evenodd'
-                    d='M14.586 2H5.414A1.414 1.414 0 004 3.414V16.586a1.414 1.414 0 001.414 1.414h9.172A1.414 1.414 0 0016 16.586V3.414A1.414 1.414 0 0014.586 2zM5 4h10v12H5V4z'
-                    clipRule='evenodd'
-                  />
-                </svg>
+                <FontAwesomeIcon icon={icon({ name: 'phone' })} />
                 <div className='flex flex-col ml-2'>
                   <div className='mb-0 pb-0 font-semibold'>07497-497-583</div>
                   <div className='-mt-[2px] text-xs'>Make a call</div>
@@ -307,78 +296,50 @@ const Header = ({ children }: any) => {
                           className='space-y-4'
                           aria-labelledby='mega-menu-dropdown-button'
                         >
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              About Us
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Library
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Resources
-                            </a>
-                          </li>
+                          {categories.slice(0, 3).map((category) => {
+                            return (
+                              <li>
+                                <a
+                                  href={category.url}
+                                  className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
+                                >
+                                  {category.label}
+                                </a>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                       <div className='p-4 pb-0 text-white md:pb-4 dark:text-white'>
                         <ul className='space-y-4'>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Blog
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Newsletter
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Playground
-                            </a>
-                          </li>
+                          {categories.slice(3, 6).map((category) => {
+                            return (
+                              <li>
+                                <a
+                                  href={category.url}
+                                  className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
+                                >
+                                  {category.label}
+                                </a>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                       <div className='p-4'>
                         <ul className='space-y-4'>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Contact Us
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href='/'
-                              className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
-                            >
-                              Support Center
-                            </a>
-                          </li>
+                          {categories.slice(6, 9).map((category) => {
+                            return (
+                              <li>
+                                <a
+                                  href={category.url}
+                                  className='text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500'
+                                >
+                                  {category.label}
+                                </a>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                     </div>

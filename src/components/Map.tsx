@@ -4,16 +4,18 @@ import React, { useEffect, useRef } from 'react';
 // @ts-ignore
 import 'leaflet/dist/leaflet.css';
 import { MapContainer, Marker, TileLayer, useMap } from 'react-leaflet';
-
+// @ts-ignore
+import icon from 'leaflet/dist/images/marker-icon.png';
+// @ts-ignore
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+// @ts-ignore
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 // @ts-ignore
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconUrl:
-    'https://cdn5.vectorstock.com/i/1000x1000/99/84/map-marker-icon-vector-13489984.jpg', // URL for the default icon image
-  // iconRetinaUrl:
-  //   'https://cdn5.vectorstock.com/i/1000x1000/99/84/map-marker-icon-vector-13489984.jpg', // URL for the retina icon image (2x resolution)
-  // shadowUrl:
-  //   'https://cdn5.vectorstock.com/i/1000x1000/99/84/map-marker-icon-vector-13489984.jpg', // URL for the marker shadow image
+  iconUrl: icon,
+  iconRetinaUrl: iconRetinaUrl,
+  shadowUrl: iconShadow,
 });
 
 interface MapProps {
@@ -45,7 +47,7 @@ const Map: React.FC<MapProps> = ({ center = [51.5074, -0.1278] }) => {
   return (
     <MapContainer
       center={(center as L.LatLngExpression) || [51, -0.09]}
-      zoom={center ? 8 : 4}
+      zoom={center ? 10 : 0}
       scrollWheelZoom={false}
       className='h-[35vh] rounded-lg shadow-lg'
       // @ts-ignore

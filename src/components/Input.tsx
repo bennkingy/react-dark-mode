@@ -1,13 +1,14 @@
 import { ChangeEvent } from 'react';
 
 type props = {
-  placeholder: string;
-  label: string;
+  placeholder?: string;
+  label?: string;
   type?: 'button' | 'submit' | 'reset' | 'text' | 'number' | 'email';
-  value: string | number;
+  value?: string | number;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   name?: string;
   id?: string;
+  disabled?: boolean;
 };
 
 export const Input = ({
@@ -18,6 +19,7 @@ export const Input = ({
   onChange,
   name,
   id,
+  disabled,
 }: props) => {
   return (
     <div className='relative z-0 w-full'>
@@ -26,6 +28,7 @@ export const Input = ({
         // value={value}
         name={name}
         id={id}
+        disabled={disabled}
         className='block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-[1px] border-blue-500 appearance-none text-white dark:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer'
         placeholder={placeholder}
         onChange={onChange}
