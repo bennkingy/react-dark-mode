@@ -42,7 +42,7 @@ const Footer = ({ children }: any) => (
               Services
             </h2>
             <div className='flex flex-row'>
-              <ul className='text-gray-500 dark:text-gray-400 font-medium mr-4'>
+              <ul className='text-gray-500 dark:text-gray-400 font-medium mr-7'>
                 {categories.slice(0, 3).map((category) => {
                   return (
                     <li>
@@ -53,7 +53,7 @@ const Footer = ({ children }: any) => (
                   );
                 })}
               </ul>
-              <ul className='text-gray-500 dark:text-gray-400 font-medium'>
+              <ul className='text-gray-500 dark:text-gray-400 font-medium  mr-7'>
                 {categories.slice(3, 6).map((category) => {
                   return (
                     <li>

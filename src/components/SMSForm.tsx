@@ -53,8 +53,8 @@ const SMSForm = () => {
   return (
     <form onSubmit={onSubmit} className={error ? 'error sms-form' : 'sms-form'}>
       <p className='text-sm text-gray-500 dark:text-gray-400 font-medium'>
-        Send our engineers a text to call back directly below. We aim to call
-        you back within 24 hours.
+        Send our engineers a text with your number to call you. Expect one our
+        friendly engineers to call within 24 hours.
       </p>
       <div className='flex mt-4'>
         <Input

@@ -3,7 +3,8 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Slider from 'react-slick';
+import { useState } from 'react';
+import Slider, { Settings } from 'react-slick';
 import CarouselSlide from './CarouselSlide';
 
 type Props = {
@@ -12,9 +13,13 @@ type Props = {
 };
 
 const Carousel = ({ slides, slidesToShow = 3 }: Props) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
-      className='absolute bottom-0 right-12 z-50 overflow-hidden'
+      className={`absolute bottom-0 right-12 z-50 overflow-hidden ${
+        currentSlide === 0 ? 'opacity-0' : ''
+      }`}
       onClick={onClick}
     >
       <FontAwesomeIcon icon={faChevronLeft} />
@@ -22,20 +27,24 @@ const Carousel = ({ slides, slidesToShow = 3 }: Props) => {
   );
 
   const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
-    <button className='absolute bottom-0 right-0 z-50 pr-5' onClick={onClick}>
+    <button
+      className={`absolute bottom-0 right-0 z-50 pr-5 ${
+        currentSlide === slides.length - 1 && 'opacity-0'
+      }`}
+      onClick={onClick}
+    >
       <FontAwesomeIcon icon={faChevronRight} />
     </button>
   );
 
-  const settings = {
+  const settings: Settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: slidesToShow,
-    // @ts-ignore
-    prevArrow: <CustomPrevArrow onClick={CustomPrevArrow} />, // Pass onClick function
-    // @ts-ignore
-    nextArrow: <CustomNextArrow onClick={CustomNextArrow} />, // Pass onClick function
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
+    afterChange: (current: number) => setCurrentSlide(current),
   };
 
   return (
