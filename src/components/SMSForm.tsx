@@ -5,40 +5,39 @@ import Input from './Input';
 
 const SMSForm = () => {
   const [message, setMessage] = useState({
-    to: '',
     body: '',
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
 
-  console.log('message', message);
+  console.log('message', message.body);
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setSubmitting(true);
-    fetch('http://localhost:3001/send-sms', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(message),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res === 'SMS sent successfully') {
-          setError(false);
-          setSubmitting(false);
-          setMessage({
-            to: '',
-            body: '',
-          });
-          toast.success('Excellent! We will be in touch shortly.');
-        } else {
-          setError(true);
-          setSubmitting(false);
-          toast.success('Sorry! There has been an error.');
-        }
+    try {
+      const res = await fetch('http://localhost:3001/send-sms', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(message),
       });
+      const data = await res.json();
+      if (data === 'SMS sent successfully') {
+        setError(false);
+        toast.success('Excellent! We will be in touch shortly.');
+        setMessage({ body: '' });
+      } else {
+        setError(true);
+        toast.success('Sorry! There has been an error.');
+      }
+    } catch (error) {
+      setError(true);
+      toast.error('An error occurred. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const onHandleChange = (
@@ -53,22 +52,13 @@ const SMSForm = () => {
 
   return (
     <form onSubmit={onSubmit} className={error ? 'error sms-form' : 'sms-form'}>
-      {/* <div>
-        <label htmlFor='to'>To:</label>
-        <input
-          type='tel'
-          name='to'
-          id='to'
-          value={message.to}
-          onChange={onHandleChange}
-        />
-      </div> */}
       <p className='text-sm text-gray-500 dark:text-gray-400 font-medium'>
         Send our engineers a text to call back directly below. We aim to call
         you back within 24 hours.
       </p>
       <div className='flex mt-4'>
         <Input
+          // className='w-full'
           label='Enter your number'
           placeholder='Enter your number'
           name='body'
@@ -78,9 +68,10 @@ const SMSForm = () => {
           onChange={onHandleChange}
         />
         <Button
+          className='flex-1 bg-white border-white text-gray-900 font-bold max-w-[100px] min-w-[100px]'
           type='submit'
           small
-          label='Submit'
+          label='Call me back'
           outline
           disabled={submitting}
         />

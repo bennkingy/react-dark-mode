@@ -5,57 +5,63 @@ export const categories = [
   {
     label: 'Gas Safety Certificates',
     description:
-      'Landlord gas safety certificates It is a legal requirement for all landlords to ensure they have an up-to-date Gas Safety Certificate or CP12 for each gas appliance within the property, which must be renewed every year, failure to do so may result in substantial fines, and render the appliances unsafe for the tenants to use.',
+      'Ensuring the safety of your tenants is a top priority for landlords. By law, you must have an up-to-date Gas Safety Certificate or CP12 for every gas appliance in your property. These certificates need to be renewed annually to comply with regulations. Failure to do so can result in significant fines and, more importantly, put your tenants at risk. Rest assured, our professional team can help you obtain and maintain these certificates, ensuring the safety of your property and its occupants.',
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'fire-flame-simple' })} />,
   },
   {
     label: 'Plumbing and Heating',
-    description: 'Something about Plumbing and Heating.',
+    description:
+      'At our plumbing and heating company, we offer comprehensive services to meet all your plumbing and heating needs. No job is too small or too big for us. From a simple tap cartridge change to a complete boiler installation, we have the knowledge and expertise to handle it all. Our skilled team is dedicated to delivering timely and affordable solutions, providing you with peace of mind and efficient plumbing and heating systems.',
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'warning' })} />,
   },
   {
-    label: 'Annual Boiler Servicing',
-    description:
-      'If you stay on top of your annual boiler servicing, PowerFlushing is usually recommended every 5 years. All other plumbing services We cover the full spectrum of plumbing, gas and heating work, with no job being too small or big for us to handle. Whether it be a simple tap cartridge change, boiler installation, or an emergency plumbing issue, we have the knowledge and expertise to get this fixed for you, in a timely and affordable manner.',
-    url: '/',
-    icon: <FontAwesomeIcon icon={icon({ name: 'wrench' })} />,
-  },
-  {
     label: 'Free Health check',
-    description: 'Something about a health check.',
+    description:
+      "Taking care of your plumbing and heating system's health is crucial to prevent unexpected problems. We offer complimentary health checks to assess the condition of your system, identifying any potential issues and offering suitable recommendations. Our team of experts will conduct a thorough inspection, ensuring that your system is functioning optimally and providing you with the peace of mind you deserve.",
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'heart' })} />,
   },
   {
     label: 'Servicing or Repairing',
-    description: 'Something about a servicing or repairing.',
+    description:
+      "Whether your plumbing or heating system needs servicing or repair, our dedicated team is here to assist you. We have the skills and knowledge to handle a wide range of plumbing and heating issues. Our technicians will promptly diagnose the problem and provide effective solutions to restore your system's functionality. Trust us to deliver reliable and efficient servicing or repairs, keeping your plumbing and heating systems in excellent condition.",
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'user' })} />,
   },
   {
     label: 'Emergency repairs',
-    description: 'Something about emergency repairs.',
+    description:
+      'Plumbing and heating emergencies can happen at any time, causing inconvenience and stress. Our team is available round-the-clock to provide emergency repairs when you need them most. We understand the urgency of such situations and will swiftly respond to your call, offering reliable and efficient solutions to resolve the issue. Rest assured, our experienced technicians will restore your plumbing and heating systems to full operation promptly.',
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'warning' })} />,
   },
   {
     label: 'System Installation',
-    description: 'Something about system instalaltions.',
+    description:
+      "When it comes to system installations, our professional team has the expertise to handle the job with precision and efficiency. Whether you need a new boiler, central heating system, or any other plumbing and heating component installed, we've got you covered. We work diligently to ensure proper installation, taking into account your specific requirements and providing you with a reliable and efficient system that meets your needs.",
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'warning' })} />,
   },
   {
     label: 'Power Flushing',
     description:
-      'Fortunately Mallard Plumbing and Heating services are well equipped to provide these for you on an ad-hoc or annual basis to suit your requirements. Power flushing Is your heating system showing signs of bad circulation? Over time a combination of sludge, rust and debris can accumulate in your central heating system. Power flushing helps by improvising the circulation of water throughout the pipework, enabling your system to operate optimally, extending the life of your heating system and reducing the risk of breakdowns.',
+      'Is your heating system exhibiting signs of poor circulation? Over time, sludge, rust, and debris can accumulate in your central heating system, hindering its performance. Power flushing is an effective solution to improve water circulation, enhancing the efficiency and lifespan of your heating system while reducing the risk of breakdowns. Our skilled technicians are well-equipped to provide power flushing services, whether on an ad-hoc or annual basis, tailored to your specific requirements.',
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'toilet' })} />,
   },
   {
+    label: 'Boiler Servicing',
+    description:
+      "Regular maintenance is key to ensuring the longevity and efficiency of your boiler. We highly recommend staying on top of your annual boiler servicing. Additionally, Power Flushing is an essential service that should be performed every five years. Over time, sludge, rust, and debris can accumulate in your central heating system, causing circulation issues. Power flushing helps improve water circulation, optimizing your system's performance, extending its lifespan, and reducing the risk of breakdowns.",
+    url: '/',
+    icon: <FontAwesomeIcon icon={icon({ name: 'wrench' })} />,
+  },
+  {
     label: 'Something else',
-    description: 'This is super edge case bro.',
+    description:
+      "We're always ready to tackle unique challenges and cater to your specific plumbing and heating needs. Our experienced team is versatile and knowledgeable, capable of handling even the most unusual cases. Feel free to reach out to us with your requirements, and we'll provide you with tailored solutions that meet your expectations. Your satisfaction is our priority, and we strive to deliver outstanding service, no matter the complexity of the task.",
     url: '/',
     icon: <FontAwesomeIcon icon={icon({ name: 'question' })} />,
   },

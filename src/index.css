@@ -9,8 +9,46 @@
     margin: 0;
   }
 }
-/* 
-.slick-track {
-  margin-left: -100px
-} */
 
+.slick-list {
+    margin-left: -100px;
+    padding-left: 100px;
+    overflow: visible !important;
+}
+
+.slick-slider {
+  overflow: visible !important;
+}
+
+.slick-slide {
+  padding: 20px
+}
+
+.slick-next {
+  z-index: 9999;
+  right: 0;
+    bottom: 0 !important;
+  position: absolute;
+  background: red;
+  display: none !important;;
+}
+
+/* https: //stackoverflow.com/questions/49018820/custom-arrows-react-slick */
+
+.slick-prev {
+  z-index: 9999;
+  right: 0;
+  bottom: 0 !important;
+  position: absolute;
+  background: red;
+    display: none !important;
+}
+
+.slick-dots {
+  bottom: -25px;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  padding-left: 9px;
+}

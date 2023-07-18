@@ -1,82 +1,53 @@
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from 'react-slick';
+import CarouselSlide from './CarouselSlide';
 
-const Carousel = () => {
-  var settings = {
+type Props = {
+  slides: any[];
+  slidesToShow: number;
+};
+
+const Carousel = ({ slides, slidesToShow = 3 }: Props) => {
+  const CustomPrevArrow = ({ onClick }: { onClick?: () => void }) => (
+    <button
+      className='absolute bottom-0 right-12 z-50 overflow-hidden'
+      onClick={onClick}
+    >
+      <FontAwesomeIcon icon={faChevronLeft} />
+    </button>
+  );
+
+  const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
+    <button className='absolute bottom-0 right-0 z-50 pr-5' onClick={onClick}>
+      <FontAwesomeIcon icon={faChevronRight} />
+    </button>
+  );
+
+  const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
-    slide: '.slick-slideshow__slide',
-    slidesToShow: 1,
-    // centerMode: true,
-    // centerPadding: '20%',
+    slidesToShow: slidesToShow,
+    // @ts-ignore
+    prevArrow: <CustomPrevArrow onClick={CustomPrevArrow} />, // Pass onClick function
+    // @ts-ignore
+    nextArrow: <CustomNextArrow onClick={CustomNextArrow} />, // Pass onClick function
   };
 
   return (
-    <Slider {...settings} className='overflow-hidden ml-20 max-h-sm'>
-      <div className='slick-slideshow__slideh-20 pl-5'>
-        <img
-          className='w-full rounded-lg max-h-[200px]'
-          src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png'
-          alt='office content 1'
+    <Slider {...settings} className='overflow-hidden'>
+      {slides.map((slide: any) => (
+        <CarouselSlide
+          title={slide.title}
+          location={slide.location}
+          img={slide.img || 'https://via.placeholder.com/500'}
+          key={slide.id}
         />
-        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-        and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley
-        of type and scrambled it to make a type specimen book. It has survived
-        not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and more
-        recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-      </div>
-      <div className='slick-slideshow__slideh-20 pl-5'>
-        <img
-          className='w-full rounded-lg max-h-[200px]'
-          src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png'
-          alt='office content 1'
-        />
-        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-        and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley
-        of type and scrambled it to make a type specimen book. It has survived
-        not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and more
-        recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-      </div>
-      <div className='slick-slideshow__slideh-20 pl-5'>
-        <img
-          className='w-full rounded-lg max-h-[200px]'
-          src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png'
-          alt='office content 1'
-        />
-        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-        and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley
-        of type and scrambled it to make a type specimen book. It has survived
-        not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and more
-        recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-      </div>
-      <div className='slick-slideshow__slideh-20 pl-5'>
-        <img
-          className='w-full rounded-lg max-h-[200px]'
-          src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png'
-          alt='office content 1'
-        />
-        What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-        and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley
-        of type and scrambled it to make a type specimen book. It has survived
-        not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with
-        the release of Letraset sheets containing Lorem Ipsum passages, and more
-        recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum.
-      </div>
+      ))}
     </Slider>
   );
 };

@@ -109,11 +109,12 @@ const RentModal = () => {
       <div
         className='
           grid 
-          grid-cols-1 
-          md:grid-cols-2 
+          grid-cols-2
           gap-3
-          max-h-[45vh]
+          max-h-[60vh]
+          md:max-h-[50vh]
           overflow-y-auto
+          p-2
         '
       >
         {categories.map((item) => (
@@ -133,10 +134,7 @@ const RentModal = () => {
   if (step === STEPS.LOCATION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading
-          title='Where is your place located?'
-          subtitle='Help guests find you!'
-        />
+        <Heading title='Where is your home located?' subtitle='Pick a reigon' />
         <CountrySelect
           value={location}
           onChange={(value) => setCustomValue('location', value)}
@@ -180,10 +178,7 @@ const RentModal = () => {
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading
-          title='Add a photo of your place'
-          subtitle='Show guests what your place looks like!'
-        />
+        <Heading title='Want to add a photo?' subtitle='Upload an image' />
         {/* <ImageUpload
           onChange={(value) => {
             setCustomValue('imageSrc', value);
@@ -191,11 +186,11 @@ const RentModal = () => {
           }}
           value={imageSrc}
         /> */}
-        {!isImageSelected && (
+        {/* {!isImageSelected && (
           <span className='text-red-600'>
             Please add a photo of your place.
           </span>
-        )}
+        )} */}
       </div>
     );
   }
