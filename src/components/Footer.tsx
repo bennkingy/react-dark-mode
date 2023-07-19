@@ -10,7 +10,7 @@ library.add(faInstagram, faFacebook);
 
 const Footer = ({ children }: any) => (
   <footer className=''>
-    <div className='md:px-5 sm:px-2 p-4 md:py-8 md:pt-4 max-w-screen-xl mx-auto -mb-[100px] mt-[20px]'>
+    <div className='md:px-5 sm:px-2 p-4 md:py-8 md:pt-4 max-w-screen-xl mx-auto -mb-[100px] mt-[80px]'>
       <Map />
     </div>
     <div className='mx-auto w-full bg-gray-900 dark:bg-gray-900 pt-[100px]'>

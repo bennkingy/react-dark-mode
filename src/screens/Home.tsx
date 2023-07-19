@@ -73,9 +73,14 @@ const Home: React.FC = () => {
           center
           className='mt-20 mb-11'
         />
-        <Carousel slides={slides} slidesToShow={3} />
+        <Carousel slides={slides} slidesToShow={1} />
       </div>
-      <Heading title='Services' tag='Our services' center className='mt-10' />
+      <Heading
+        title='Services'
+        tag='Our services'
+        center
+        className='mt-10 mb-20'
+      />
       <Services />
       {/* <MainServices /> */}
     </div>

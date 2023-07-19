@@ -7,33 +7,28 @@ export const categories = [
     description:
       'Ensuring the safety of your tenants is a top priority for landlords. By law, you must have an up-to-date Gas Safety Certificate or CP12 for every gas appliance in your property. These certificates need to be renewed annually to comply with regulations. Failure to do so can result in significant fines and, more importantly, put your tenants at risk. Rest assured, our professional team can help you obtain and maintain these certificates, ensuring the safety of your property and its occupants.',
     url: '/',
-    icon: (
-      <FontAwesomeIcon
-        icon={icon({ name: 'fire-flame-simple' })}
-        color='white'
-      />
-    ),
+    icon: <FontAwesomeIcon icon={icon({ name: 'fire-flame-simple' })} />,
   },
   {
     label: 'Plumbing and Heating',
     description:
       'At our plumbing and heating company, we offer comprehensive services to meet all your plumbing and heating needs. No job is too small or too big for us. From a simple tap cartridge change to a complete boiler installation, we have the knowledge and expertise to handle it all. Our skilled team is dedicated to delivering timely and affordable solutions, providing you with peace of mind and efficient plumbing and heating systems.',
     url: '/',
-    icon: <FontAwesomeIcon icon={icon({ name: 'warning' })} color='white' />,
+    icon: <FontAwesomeIcon icon={icon({ name: 'warning' })} />,
   },
   {
     label: 'Free Health check',
     description:
       "Taking care of your plumbing and heating system's health is crucial to prevent unexpected problems. We offer complimentary health checks to assess the condition of your system, identifying any potential issues and offering suitable recommendations. Our team of experts will conduct a thorough inspection, ensuring that your system is functioning optimally and providing you with the peace of mind you deserve.",
     url: '/',
-    icon: <FontAwesomeIcon icon={icon({ name: 'heart' })} color='white' />,
+    icon: <FontAwesomeIcon icon={icon({ name: 'heart' })} />,
   },
   {
     label: 'Servicing or Repairing',
     description:
       "Whether your plumbing or heating system needs servicing or repair, our dedicated team is here to assist you. We have the skills and knowledge to handle a wide range of plumbing and heating issues. Our technicians will promptly diagnose the problem and provide effective solutions to restore your system's functionality. Trust us to deliver reliable and efficient servicing or repairs, keeping your plumbing and heating systems in excellent condition.",
     url: '/',
-    icon: <FontAwesomeIcon icon={icon({ name: 'user' })} color='white' />,
+    icon: <FontAwesomeIcon icon={icon({ name: 'user' })} />,
   },
   {
     label: 'Emergency repairs',
@@ -77,7 +72,7 @@ export const categories = [
 const Services = () => {
   return (
     <section className='bg-white dark:bg-gray-900'>
-      <div className='py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6'>
+      <div className='px-4 mx-auto max-w-screen-xl lg:px-6'>
         {/* <div className='max-w-screen-md mb-8 lg:mb-16'>
           <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
             Some of the services we provide
@@ -92,15 +87,15 @@ const Services = () => {
             return (
               <div
                 key={i}
-                className='hover:bg-blue-500 border-2 p-10 -mr-2 -mt-2 text-gray-500 bg-white hover:text-white'
+                className='hover:bg-blue-500 border-2 p-10 -mr-2 -mt-2 text-gray-white bg-white hover:text-white'
               >
-                <div className='flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-blue-900'>
+                <div className='flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-blue-900 text-white hover:bg-green-500'>
                   {category.icon}
                 </div>
                 <h3 className='mb-2 text-xl font-bold text-black hover:text-black'>
                   {category.label}
                 </h3>
-                <p className=' hover:text-white'>{category.description}</p>
+                <p className='hover:text-white'>{category.description}</p>
               </div>
             );
           })}

@@ -118,7 +118,7 @@ const RentModal = () => {
         '
       >
         {categories.map((item) => (
-          <div key={item.label} className='col-span-1'>
+          <div key={item.label} className='col-span-1 text-red'>
             <CategoryInput
               onClick={(category) => setCustomValue('category', category)}
               selected={category === item.label}

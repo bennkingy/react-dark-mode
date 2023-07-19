@@ -1,7 +1,5 @@
-'use client';
-
 interface CategoryBoxProps {
-  icon: any;
+  icon?: any;
   label: string;
   selected?: boolean;
   onClick: (value: string) => void;
