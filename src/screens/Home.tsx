@@ -1,5 +1,7 @@
 import Carousel from '../components/Carousel';
+import Heading from '../components/Heading';
 import Hero from '../components/Hero';
+import Services from '../components/Services';
 // import Waves from '../components/Waves';
 import { removeBodyScrollingWhenModalOpen } from '../helpers/extensions';
 import useRentModal from '../hooks/useRentModal';
@@ -64,14 +66,18 @@ const Home: React.FC = () => {
           },
         }}
       />
-      <div className='mx-auto max-w-screen-xl py-16  overflow-visible'>
+      <div className='mx-auto max-w-screen-xl overflow-visible'>
+        <Heading
+          title='Gallery'
+          tag='Our work gallery'
+          center
+          className='mt-20 mb-11'
+        />
         <Carousel slides={slides} slidesToShow={3} />
       </div>
-      {/* <div className='mx-auto max-w-screen-xl py-16  overflow-visible'>
-        <Carousel slides={slides} slidesToShow={1} />
-      </div> */}
-      {/* <Waves /> */}
-      {/* <Services /> */}
+      <Heading title='Services' tag='Our services' center className='mt-10' />
+      <Services />
+      {/* <MainServices /> */}
     </div>
   );
 };

@@ -210,12 +210,15 @@ const Header = ({ children }: any) => {
         }}
       >
         <nav
-          className={`h-[70px] border-gray-200 transition-colors ${
+          className={`h-[70px] border-b-2 border-white transition-colors ${
             !isFixed ? 'bg-transparent text-white' : 'bg-white shadow-sm'
           }`}
         >
-          <div className='flex h-full flex-wrap items-center justify-between max-w-screen-xl mx-auto px-4'>
-            <a href='/' className='flex items-center'>
+          <div className='flex flex-wrap items-center justify-between max-w-screen-xl mx-auto px-4 h-full'>
+            <a
+              href='/'
+              className='flex items-center  border-r-2 pr-6 border-white h-full'
+            >
               <span
                 className={`self-center text-2xl font-semibold whitespace-nowrap ${
                   isMenuMobileOpen
@@ -228,7 +231,7 @@ const Header = ({ children }: any) => {
                 Plumbers
               </span>
             </a>
-            <div className='flex items-center md:order-2'>
+            <div className='flex items-center md:order-2 border-l-2 h-full pl-5'>
               <div
                 className={`hidden md:flex flex-row items-center ${
                   !isFixed ? 'text-white' : 'text-black'

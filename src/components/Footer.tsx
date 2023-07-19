@@ -10,7 +10,7 @@ library.add(faInstagram, faFacebook);
 
 const Footer = ({ children }: any) => (
   <footer className=''>
-    <div className='md:px-5 sm:px-2 p-4 md:py-8 max-w-screen-xl mx-auto -mb-[100px]'>
+    <div className='md:px-5 sm:px-2 p-4 md:py-8 md:pt-4 max-w-screen-xl mx-auto -mb-[100px] mt-[20px]'>
       <Map />
     </div>
     <div className='mx-auto w-full bg-gray-900 dark:bg-gray-900 pt-[100px]'>
@@ -85,7 +85,7 @@ const Footer = ({ children }: any) => (
           </div>
         </div>
       </div>
-      <div className='px-4 pb-6 dark:bg-gray-700 md:flex md:items-center md:justify-between max-w-screen-xl mx-auto'>
+      <div className='px-4 pb-6 dark:bg-gray-700 md:flex md:items-center md:justify-between max-w-screen-xl mx-auto mt-6'>
         <ul className='text-gray-500 dark:text-gray-400 font-medium flex flex-row text-sm'>
           <li className='mr-4'>
             <a href='#' className='hover:underline'>
@@ -105,8 +105,7 @@ const Footer = ({ children }: any) => (
         </ul>
         <div className='flex mt-6 space-x-5 sm:justify-center md:mt-0'>
           <span className='text-sm text-gray-500 dark:text-gray-300 sm:text-center'>
-            © 2023 <a href='https://flowbite.com/'>MallrdPLumbing™</a>. All
-            Rights Reserved.
+            © 2023 <a href='#'>Mallard Plumbing™</a>. All Rights Reserved.
           </span>
         </div>
       </div>

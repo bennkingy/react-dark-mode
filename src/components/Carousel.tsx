@@ -29,7 +29,7 @@ const Carousel = ({ slides, slidesToShow = 3 }: Props) => {
   const CustomNextArrow = ({ onClick }: { onClick?: () => void }) => (
     <button
       className={`absolute bottom-0 right-0 z-50 pr-5 ${
-        currentSlide === slides.length - 1 && 'opacity-0'
+        currentSlide === slides.length - slidesToShow ? 'opacity-0' : ''
       }`}
       onClick={onClick}
     >
@@ -38,7 +38,7 @@ const Carousel = ({ slides, slidesToShow = 3 }: Props) => {
   );
 
   const settings: Settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: slidesToShow,
