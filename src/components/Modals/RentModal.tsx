@@ -104,6 +104,7 @@ const RentModal = () => {
     <div className='flex flex-col gap-8'>
       <Heading
         title='Select the service you require'
+        titleSize='text-3xl'
         subtitle='Pick a service'
       />
       <div
@@ -134,7 +135,11 @@ const RentModal = () => {
   if (step === STEPS.LOCATION) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='Where is your home located?' subtitle='Pick a reigon' />
+        <Heading
+          title='Where is your home located?'
+          subtitle='Pick a reigon'
+          titleSize='text-3xl'
+        />
         <CountrySelect
           value={location}
           onChange={(value) => setCustomValue('location', value)}
@@ -150,6 +155,7 @@ const RentModal = () => {
   //       <Heading
   //         title='Share some basics about your place'
   //         subtitle='What amenitis do you have?'
+  // titleSize = 'text-3xl';
   //       />
   //       <Counter
   //         onChange={(value) => setCustomValue('guestCount', value)}
@@ -178,7 +184,11 @@ const RentModal = () => {
   if (step === STEPS.IMAGES) {
     bodyContent = (
       <div className='flex flex-col gap-8'>
-        <Heading title='Want to add a photo?' subtitle='Upload an image' />
+        <Heading
+          title='Want to add a photo?'
+          subtitle='Upload an image'
+          titleSize='text-3xl'
+        />
         {/* <ImageUpload
           onChange={(value) => {
             setCustomValue('imageSrc', value);
@@ -201,6 +211,7 @@ const RentModal = () => {
         <Heading
           title='How would you describe your place?'
           subtitle='Short and sweet works best!'
+          titleSize='text-3xl'
         />
         <Input id='title' label='Title' disabled={isLoading} />
         <hr />
@@ -215,6 +226,7 @@ const RentModal = () => {
         <Heading
           title='Now, set your price'
           subtitle='How much do you charge per night?'
+          titleSize='text-3xl'
         />
         <Input id='price' label='Price' type='number' disabled={isLoading} />
       </div>

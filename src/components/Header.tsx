@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Turn as Hamburger } from 'hamburger-react';
 import { useEffect, useState } from 'react';
 import Headroom from 'react-headroom';
+import { useMediaQuery } from 'react-responsive';
 import { removeBodyScrollingWhenModalOpen } from '../helpers/extensions';
 import { categories } from './Services';
 
@@ -10,6 +11,8 @@ const Header = ({ children }: any) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isMenuMobileOpen, setIsMenuMobileOpen] = useState<boolean>(false);
   const [isFixed, setIsFixed] = useState<boolean>();
+
+  const isMediumWidth = useMediaQuery({ maxWidth: 768 });
 
   const toggleMenu = (forceClose?: boolean) => {
     setIsMenuOpen(forceClose ? false : !isMenuOpen);
@@ -197,7 +200,7 @@ const Header = ({ children }: any) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [isMediumWidth]);
 
   return (
     <>

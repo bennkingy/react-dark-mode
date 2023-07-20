@@ -2,6 +2,17 @@
 
 interface HeadingProps {
   title: string;
+  titleSize?:
+    | 'text-5xl'
+    | 'text-4xl'
+    | 'text-3xl'
+    | 'text-2xl'
+    | 'text-xl'
+    | 'text-lg'
+    | 'text-md'
+    | 'text-sm'
+    | 'text-xs'
+    | 'text-xxs';
   subtitle?: string;
   tag?: string;
   center?: boolean;
@@ -10,6 +21,7 @@ interface HeadingProps {
 
 const Heading: React.FC<HeadingProps> = ({
   title,
+  titleSize = 'text-5xl',
   subtitle,
   tag,
   center,
@@ -18,7 +30,7 @@ const Heading: React.FC<HeadingProps> = ({
   return (
     <div className={`${center ? 'text-center ' : 'text-start '}${className}`}>
       <div className='font-bold'>{tag}</div>
-      <div className=' font-bold text-5xl mt-2'>{title}</div>
+      <div className={`${'font-bold mt-2 '}${titleSize}`}>{title}</div>
       <div className='font-light text-neutral-500 mt-2'>{subtitle}</div>
     </div>
   );
