@@ -27,14 +27,14 @@ const Header = ({ children }: any) => {
     return (
       <div
         className='
-          overflow-x-hidden 
-          overflow-y-auto 
-          fixed 
-          inset-0 
-          z-[1]
-          outline-none 
-          focus:outline-none
-          bg-neutral-800/70
+          // overflow-x-hidden 
+          // overflow-y-auto 
+          // fixed 
+          // inset-0 
+          // z-10
+          // outline-none 
+          // focus:outline-none
+          // bg-neutral-800/70
         '
       >
         <div className='h-full w-[calc(100vw-100px)] z-50 absolute bg-white dark:bg-gray-700 md:hidden'>
@@ -220,7 +220,7 @@ const Header = ({ children }: any) => {
           <div className='flex flex-wrap items-center justify-between max-w-screen-xl mx-auto px-4 h-full'>
             <a
               href='/'
-              className='flex items-center  border-r-2 pr-6 border-white h-full'
+              className='flex items-center border-r-2 pr-6 border-white h-full'
             >
               <span
                 className={`self-center text-2xl font-semibold whitespace-nowrap ${
@@ -246,7 +246,7 @@ const Header = ({ children }: any) => {
                   <div className='-mt-[2px] text-xs'>Make a call</div>
                 </div>
               </div>
-              <div className='md:hidden relative z-50' style={{ zIndex: 9999 }}>
+              <div className='md:hidden relative z-[100000000000000000]' style={{ zIndex: 9999 }}>
                 <Hamburger
                   toggled={isMenuMobileOpen}
                   toggle={toggleMenuMobile}

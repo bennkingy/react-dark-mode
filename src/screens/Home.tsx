@@ -3,6 +3,7 @@ import Heading from '../components/Heading';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 // import Waves from '../components/Waves';
+import { useMediaQuery } from 'react-responsive';
 import { removeBodyScrollingWhenModalOpen } from '../helpers/extensions';
 import useRentModal from '../hooks/useRentModal';
 
@@ -51,6 +52,7 @@ const slides = [
 
 const Home: React.FC = () => {
   const rentModal = useRentModal();
+  const isMobile = useMediaQuery({ query: '(max-width: 600px)' });
 
   return (
     <div className=''>
@@ -73,7 +75,7 @@ const Home: React.FC = () => {
           center
           className='mt-20 mb-11'
         />
-        <Carousel slides={slides} slidesToShow={1} />
+        <Carousel slides={slides} slidesToShow={isMobile ? 1 : 2} />
       </div>
       <Heading
         title='Services'

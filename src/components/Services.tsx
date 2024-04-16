@@ -82,12 +82,12 @@ const Services = () => {
             and capital can unlock long-term value and drive economic growth.
           </p>
         </div> */}
-        <div className='md:grid md:grid-cols-2 lg:grid-cols-3 md:space-0 drop-shadow-2xl -ml-[2px]'>
+        <div className='md:grid md:grid-cols-2 md:gap-10 lg:grid-cols-3 md:space-0 drop-shadow-2xl -ml-[2px]'>
           {categories.slice(0, 6).map((category, i) => {
             return (
               <div
                 key={i}
-                className='hover:bg-blue-500 border-2 p-10 -mr-2 -mt-2 text-gray-white bg-white hover:text-white'
+                className='hover:bg-blue-500 border-2 p-10 -mr-2 -mt-2 rounded-lg text-gray-white bg-white hover:text-white'
               >
                 <div className='flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 bg-blue-900 text-white hover:bg-green-500'>
                   {category.icon}
